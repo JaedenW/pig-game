@@ -15,13 +15,19 @@ const btnHold = document.querySelector(".btn--hold");
 
 // Starting conditions
 
-let scores, currentScore, activePlayer, playing;
+let scores, currentScore, activePlayer, playing, scoreLimit;
 
 const init = () => {
 	scores = [0, 0];
 	currentScore = 0;
 	activePlayer = 0;
 	playing = true;
+	console.log(scoreLimit);
+	setTimeout(() => {
+		if (typeof scoreLimit !== "number") {
+			scoreLimit = prompt("Enter a number as a score limit for the game:");
+		}
+	}, 0.1);
 
 	score0El.textContent = 0;
 	score1El.textContent = 0;
@@ -67,7 +73,7 @@ btnHold.addEventListener("click", () => {
 		document.getElementById(`score--${activePlayer}`).textContent =
 			scores[activePlayer];
 
-		if (scores[activePlayer] >= 100) {
+		if (scores[activePlayer] >= scoreLimit) {
 			playing = false;
 			document
 				.querySelector(`.player--${activePlayer}`)
