@@ -22,10 +22,12 @@ const init = () => {
 	currentScore = 0;
 	activePlayer = 0;
 	playing = true;
-	console.log(scoreLimit);
 	setTimeout(() => {
-		while (typeof scoreLimit !== "number") {
-			scoreLimit = prompt("Enter a number to set the winning score:");
+		if (typeof scoreLimit !== "number") {
+			scoreLimit = 100;
+			scoreLimit = prompt(
+				"Enter a number to set the winning score (Default: 100)"
+			);
 		}
 	}, 0.1);
 
