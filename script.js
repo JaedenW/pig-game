@@ -24,7 +24,7 @@ const init = () => {
 	playing = true;
 	console.log(scoreLimit);
 	setTimeout(() => {
-		if (typeof scoreLimit !== "number") {
+		while (typeof scoreLimit !== "number") {
 			scoreLimit = prompt("Enter a number to set the winning score:");
 		}
 	}, 0.1);
