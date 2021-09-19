@@ -24,10 +24,12 @@ const init = () => {
 	playing = true;
 	setTimeout(() => {
 		if (typeof scoreLimit !== "number") {
-			scoreLimit = 100;
 			scoreLimit = prompt(
 				"Enter a number to set the winning score (Default: 100)"
 			);
+			if (!scoreLimit) {
+				scoreLimit = 100;
+			}
 		}
 	}, 0.1);
 
