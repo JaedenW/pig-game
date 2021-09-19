@@ -27,9 +27,7 @@ const init = () => {
 			scoreLimit = prompt(
 				"Enter a number to set the winning score (Default: 100)"
 			);
-			if (!scoreLimit) {
-				scoreLimit = 100;
-			}
+			scoreLimit = scoreLimit || 100;
 		}
 	}, 0.1);
 
